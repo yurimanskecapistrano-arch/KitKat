@@ -101,7 +101,7 @@ export default function Home() {
                 <div className="archive-stamp">PRIVATE<br />♡<br />ARCHIVE</div>
               </div>
 
-              <div className="heroMessage" className={styles.heroMessage}>
+              <div className={styles.heroMessage}>
                 <article className={styles.messageCard}>
                   <span className="tiny-label">A LETTER THAT DIDN&apos;T FIT IN AN ENVELOPE</span>
                   <h3>minha princesa, eu fiz isso pra você.</h3>
@@ -139,8 +139,8 @@ export default function Home() {
               </div>
 
               <div className={styles.sectionLabel}><h3>messages / 01</h3><span>CONVERSATION SNAPSHOT</span></div>
-              <div className="message-list">
-                {messages.map(([author, text, stamp], index) => <div className={`message-bubble ${author.startsWith("minha") ? "mine" : ""}`} key={`${stamp}-${index}`}><span>{author}</span><p>{text}</p><time>{stamp}</time></div>)}
+              <div className={styles.messageList}>
+                {messages.map(([author, text, stamp], index) => <div className={`${styles.messageBubble} ${author.startsWith("minha") ? styles.mine : ""}`} key={`${stamp}-${index}`}><span>{author}</span><p>{text}</p><time>{stamp}</time></div>)}
               </div>
 
               <div className={styles.archiveStats}>
@@ -151,7 +151,6 @@ export default function Home() {
               </div>
 
               <div className={styles.assetNotice}>PHOTO SLOT READY — coloque a foto original dela em <code>public/images/kitkat-sleep.jpg</code>. A interface já está preparada para mostrar a imagem sem filtros ou alterações.</div>
-
               <footer className="footer-line"><span>MEMORIES ARE NOT FILES.</span><span>THEY ARE PLACES.</span><span>♡</span></footer>
             </div>
           </div>
